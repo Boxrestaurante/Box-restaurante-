@@ -1,19 +1,90 @@
-
-  </td>
-</tr><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Box Restaurante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-    header { background-color: #c0392b; color: white; padding: 20px; text-align: center; }
-    section { padding: 20px; }
-    h2 { color: #c0392b; }
-    .cardapio-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .whatsapp-btn { background: #25D366; color: white; padding: 15px; text-align: center; border-radius: 8px; text-decoration: none; display: block; font-weight: bold; margin-top: 20px; }
-    footer { text-align: center; padding: 15px; background: #eee; margin-top: 30px; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3efe8;
+      color: #3e2c1c;
+    }
+
+    header {
+      background: linear-gradient(to right, #6b4c3b, #4a2e1f);
+      color: #d4af37;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      margin: 0;
+      color: #d4af37;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #8b5e3c;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    .cardapio-item {
+      background: #fff8f0;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-left: 6px solid #d4af37;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .whatsapp-btn {
+      background: #d4af37;
+      color: #3e2c1c;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      margin: 30px auto 0;
+      max-width: 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .whatsapp-btn:hover {
+      background: #b89b2f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e7ded0;
+      margin-top: 40px;
+      font-size: 15px;
+    }
+
+    footer strong {
+      color: #6b4c3b;
+    }
   </style>
 </head>
 <body>
@@ -29,7 +100,7 @@
     <div class="cardapio-item">Toscana - R$22,00</div>
     <div class="cardapio-item">Bisteca - R$22,00</div>
     <div class="cardapio-item">Filé de frango - R$27,00</div>
-    <div class="cardapio-item">Costela com mandioca  - R$28,00</div>
+    <div class="cardapio-item">Costela com mandioca - R$28,00</div>
     <div class="cardapio-item">Bife - R$28,00</div>
 
     <h2>Pratos Especiais por Dia</h2>
@@ -38,10 +109,7 @@
     <div class="cardapio-item">Quarta: Feijoada (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
     <div class="cardapio-item">Quinta: Galinha - R$26,00</div>
     <div class="cardapio-item">Sexta: Peixe com purê de batata - R$35,00</div>
-   
-
-    <tr>
-  <td>Sábado</td>  <td>Feijoada</td>  <td>   Pequena: R$35,00<br>    Média: R$45,00<br>    Grande: R$60,00  </td></tr>
+    <div class="cardapio-item">Sábado: Feijoada (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
 
     <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
   </section>
