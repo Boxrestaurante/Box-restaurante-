@@ -4,93 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Box Restaurante</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Playfair Display', serif;
       margin: 0;
       padding: 0;
-      background: #f3efe8;
-      color: #3e2c1c;
+      background: #f7f1e1;
+      color: #3e2723;
     }
 
     header {
-      background: linear-gradient(to right, #6b4c3b, #4a2e1f);
-      color: #d4af37;
-      padding: 30px 20px;
+      background-color: #5d4037;
+      color: goldenrod;
+      padding: 30px;
       text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      position: relative;
     }
 
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      margin: 0;
-      color: #d4af37;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 8px;
+    header::after {
+      content: "🍴";
+      font-size: 1.5em;
+      position: absolute;
+      top: 15px;
+      right: 20px;
     }
 
     section {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      padding: 25px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
-      color: #8b5e3c;
-      border-bottom: 2px solid #d4af37;
-      padding-bottom: 5px;
-      margin-top: 40px;
+      color: #795548;
+      font-size: 1.8em;
     }
 
     .cardapio-item {
-      background: #fff8f0;
+      background: #fffaf0;
       padding: 15px;
-      margin-bottom: 12px;
-      border-left: 6px solid #d4af37;
+      margin-bottom: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 1.1em;
     }
 
     .whatsapp-btn {
-      background: #d4af37;
-      color: #3e2c1c;
+      background: #25D366;
+      color: white;
       padding: 15px;
       text-align: center;
       border-radius: 8px;
       text-decoration: none;
-      display: block;
       font-weight: bold;
-      margin: 30px auto 0;
-      max-width: 300px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .whatsapp-btn:hover {
-      background: #b89b2f;
+      display: block;
+      margin-top: 25px;
+      font-size: 1.1em;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #e7ded0;
-      margin-top: 40px;
-      font-size: 15px;
+      background: #d7ccc8;
+      margin-top: 30px;
+      font-size: 1em;
     }
 
-    footer strong {
-      color: #6b4c3b;
+    .feedbacks {
+      margin-top: 40px;
+    }
+
+    .feedbacks h2 {
+      color: #a1887f;
+    }
+
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .feedback-grid img {
+      width: 100%;
+      border-radius: 8px;
+      border: 3px solid goldenrod;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+
+    .upload-btn {
+      font-size: 32px;
+      color: goldenrod;
+      cursor: pointer;
+      margin-top: 25px;
+      display: inline-block;
+    }
+
+    input[type="file"] {
+      display: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Box Restaurante</h1>
-    <p>Comida caseira com sabor de verdade</p>
+    Box Restaurante
+    <p style="font-size: 0.5em; color: #fff8dc;">Comida caseira com sabor de verdade</p>
   </header>
 
   <section>
@@ -109,14 +138,42 @@
     <div class="cardapio-item">Quarta: Feijoada (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
     <div class="cardapio-item">Quinta: Galinha - R$26,00</div>
     <div class="cardapio-item">Sexta: Peixe com purê de batata - R$35,00</div>
-    <div class="cardapio-item">Sábado: Feijoada (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
+    <div class="cardapio-item">Sábado: Feijoada<br>Pequena: R$35,00<br>Média: R$45,00<br>Grande: R$60,00</div>
 
     <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
+  </section>
+
+  <section class="feedbacks">
+    <h2>Feedbacks e Fotos dos Clientes</h2>
+    <div class="feedback-grid">
+      <img src="ft1.jpg" alt="Foto cliente 1">
+      <img src="ft2.jpg" alt="Foto cliente 2">
+      <img src="ft3.jpg" alt="Foto cliente 3">
+      <img src="ft4.jpg" alt="Foto cliente 4">
+    </div>
+
+    <label for="upload-photo" class="upload-btn">＋</label>
+    <input 
+      type="file" 
+      id="upload-photo" 
+      accept="image/*" 
+      onchange="handleFileUpload(this.files)"
+    />
   </section>
 
   <footer>
     <p><strong>Horário:</strong> Segunda a sábado, das 7h às 16h</p>
     <p><strong>Endereço:</strong> Estrada da Água Chata, 3255</p>
   </footer>
+
+  <script>
+    function handleFileUpload(files) {
+      const file = files[0];
+      if (file) {
+        alert("Foto enviada com sucesso: " + file.name);
+        // Aqui você pode fazer upload pro backend ou adicionar preview
+      }
+    }
+  </script>
 </body>
 </html>
