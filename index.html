@@ -16,7 +16,7 @@
       font-style: italic;
       margin: 0;
       padding: 0;
-      background: #f7f1e1;
+      background: linear-gradient(to bottom, #4e342e, #d7ccc8); /* Marrom escuro pra bege */
       color: #3e2723;
     }
 
@@ -29,7 +29,6 @@
       font-weight: 600;
       position: relative;
       font-style: italic;
-      /* efeito folheado */
       background: linear-gradient(45deg, gold, darkgoldenrod);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -37,7 +36,6 @@
       text-fill-color: transparent;
     }
 
-    /* Talher dourado simples no canto direito */
     header::after {
       content: "🍴";
       font-size: 2em;
@@ -70,6 +68,10 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       font-size: 1.1em;
+    }
+
+    .cardapio-item b {
+      font-weight: bold;
     }
 
     .whatsapp-btn {
@@ -123,21 +125,21 @@
 
   <section>
     <h2>Cardápio Diário</h2>
-    <div class="cardapio-item">Frango ao molho - R$22,00</div>
-    <div class="cardapio-item">Calabresa - R$22,00</div>
-    <div class="cardapio-item">Toscana - R$22,00</div>
-    <div class="cardapio-item">Bisteca - R$22,00</div>
-    <div class="cardapio-item">Filé de frango - R$27,00</div>
-    <div class="cardapio-item">Costela com mandioca - R$28,00</div>
-    <div class="cardapio-item">Bife - R$28,00</div>
+    <div class="cardapio-item"><b>Frango ao molho</b> - R$22,00</div>
+    <div class="cardapio-item"><b>Calabresa</b> - R$22,00</div>
+    <div class="cardapio-item"><b>Toscana</b> - R$22,00</div>
+    <div class="cardapio-item"><b>Bisteca</b> - R$22,00</div>
+    <div class="cardapio-item"><b>Filé de frango</b> - R$27,00</div>
+    <div class="cardapio-item"><b>Costela com mandioca</b> - R$28,00</div>
+    <div class="cardapio-item"><b>Bife</b> - R$28,00</div>
 
     <h2>Pratos Especiais por Dia</h2>
-    <div class="cardapio-item">Segunda: Virado à Paulista - R$35,00</div>
-    <div class="cardapio-item">Terça: Bife à Rolê - R$26,00</div>
-    <div class="cardapio-item">Quarta: Feijoada (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
-    <div class="cardapio-item">Quinta: Galinha - R$26,00</div>
-    <div class="cardapio-item">Sexta: Peixe com purê de batata - R$35,00</div>
-    <div class="cardapio-item">Sábado: Feijoada<br>Pequena: R$35,00<br>Média: R$45,00<br>Grande: R$60,00</div>
+    <div class="cardapio-item">Segunda: <b>Virado à Paulista</b> - R$35,00</div>
+    <div class="cardapio-item">Terça: <b>Bife à Rolê</b> - R$26,00</div>
+    <div class="cardapio-item">Quarta: <b>Feijoada</b> (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
+    <div class="cardapio-item">Quinta: <b>Galinha</b> - R$26,00</div>
+    <div class="cardapio-item">Sexta: <b>Peixe com purê de batata</b> - R$35,00</div>
+    <div class="cardapio-item">Sábado: <b>Feijoada</b><br>Pequena: R$35,00<br>Média: R$45,00<br>Grande: R$60,00</div>
 
     <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
   </section>
