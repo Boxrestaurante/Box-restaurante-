@@ -1,35 +1,160 @@
-<style>
-  body {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #7b3f00, #fa8072); /* marrom quente para salmão quente */
-    color: #3e2723;
-  }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box Restaurante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
 
-  h2 {
-    color: gold;
-    font-size: 1.8em;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    body {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin: 0;
+      padding: 0;
+      background: #f7f1e1;
+      color: #3e2723;
+    }
 
-  .cardapio-title::before {
-    content: "🍴";
-    color: gold;
-    font-size: 1em;
-    filter: drop-shadow(0 0 1px goldenrod);
-  }
-</style>
+    header {
+      background-color: #5d4037;
+      color: goldenrod;
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: 600;
+      position: relative;
+      font-style: italic;
+      /* efeito folheado */
+      background: linear-gradient(45deg, gold, darkgoldenrod);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
 
-<section>
-  <h2 class="cardapio-title">Cardápio Diário</h2>
-  <div class="cardapio-item"><strong>Frango ao molho</strong> - R$22,00</div>
-  ...
-  <h2>Pratos Especiais por Dia</h2>
-  <div class="cardapio-item"><strong>Segunda: Virado à Paulista</strong> - R$35,00</div>
-  ...
-</section>
+    /* Talher dourado simples no canto direito */
+    header::after {
+      content: "🍴";
+      font-size: 2em;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: gold;
+      filter: drop-shadow(0 0 1px darkgoldenrod);
+    }
+
+    section {
+      padding: 25px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #795548;
+      font-size: 1.8em;
+    }
+
+    .cardapio-item {
+      background: #fffaf0;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-top: 25px;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #d7ccc8;
+      margin-top: 30px;
+      font-size: 1em;
+    }
+
+    .feedbacks {
+      margin-top: 40px;
+    }
+
+    .feedbacks h2 {
+      color: #a1887f;
+    }
+
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .feedback-grid img {
+      width: 100%;
+      border-radius: 8px;
+      border: 3px solid goldenrod;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Box Restaurante
+    <p style="font-size: 0.5em; color: #fff8dc;">Comida caseira com sabor de verdade</p>
+  </header>
+
+  <section>
+    <h2>Cardápio Diário</h2>
+    <div class="cardapio-item">Frango ao molho - R$22,00</div>
+    <div class="cardapio-item">Calabresa - R$22,00</div>
+    <div class="cardapio-item">Toscana - R$22,00</div>
+    <div class="cardapio-item">Bisteca - R$22,00</div>
+    <div class="cardapio-item">Filé de frango - R$27,00</div>
+    <div class="cardapio-item">Costela com mandioca - R$28,00</div>
+    <div class="cardapio-item">Bife - R$28,00</div>
+
+    <h2>Pratos Especiais por Dia</h2>
+    <div class="cardapio-item">Segunda: Virado à Paulista - R$35,00</div>
+    <div class="cardapio-item">Terça: Bife à Rolê - R$26,00</div>
+    <div class="cardapio-item">Quarta: Feijoada (P: R$35,00 | M: R$45,00 | G: R$60,00)</div>
+    <div class="cardapio-item">Quinta: Galinha - R$26,00</div>
+    <div class="cardapio-item">Sexta: Peixe com purê de batata - R$35,00</div>
+    <div class="cardapio-item">Sábado: Feijoada<br>Pequena: R$35,00<br>Média: R$45,00<br>Grande: R$60,00</div>
+
+    <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
+  </section>
+
+  <section class="feedbacks">
+    <h2>Feedbacks e Fotos dos Clientes</h2>
+    <div class="feedback-grid">
+      <img src="ft1.jpg" alt="Foto cliente 1">
+      <img src="ft2.jpg" alt="Foto cliente 2">
+      <img src="ft3.jpg" alt="Foto cliente 3">
+      <img src="ft4.jpg" alt="Foto cliente 4">
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Horário:</strong> Segunda a sábado, das 7h às 16h</p>
+    <p><strong>Endereço:</strong> Estrada da Água Chata, 3255</p>
+  </footer>
+</body>
+</html>
