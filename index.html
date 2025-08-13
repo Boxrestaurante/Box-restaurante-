@@ -1,135 +1,148 @@
-<!DOCTYPE html>  <html lang="pt-BR">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>Box Restaurante</title>  
-  <!-- Fonte mais legível -->  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
-  <style>  
-    * {  
-      box-sizing: border-box;  
-      transition: all 0.3s ease;  
-    }  body {  
-  font-family: 'Poppins', sans-serif;  
-  margin: 0;  
-  padding: 0;  
-  background: #f7f1e1;  
-  color: #3e2723;  
-}  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box Restaurante</title>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
 
-header {  
-  background-color: #5d4037;  
-  color: goldenrod;  
-  padding: 30px;  
-  text-align: center;  
-  font-size: 2.5em;  
-  font-weight: 600;  
-  position: relative;  
-  background: linear-gradient(45deg, gold, darkgoldenrod);  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-  background-clip: text;  
-  text-fill-color: transparent;  
-}  
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000; /* fundo preto */
+      color: #fff; /* texto branco */
+    }
 
-header::after {  
-  content: "🍴";  
-  font-size: 2em;  
-  position: absolute;  
-  top: 10px;  
-  right: 20px;  
-  color: gold;  
-  filter: drop-shadow(0 0 1px darkgoldenrod);  
-}  
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+    }
 
-section {  
-  padding: 25px;  
-  animation: fadeIn 1s ease-in-out;  
-}  
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
 
-@keyframes fadeIn {  
-  from { opacity: 0; transform: translateY(20px); }  
-  to { opacity: 1; transform: translateY(0); }  
-}  
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
+      color: #F2B705; /* dourado do logo */
+      font-weight: 600;
+    }
 
-h2 {  
-  color: #795548;  
-  font-size: 1.8em;  
-}  
+    section {
+      padding: 25px;
+      animation: fadeIn 1s ease-in-out;
+    }
 
-.cardapio-item {  
-  background: #fffaf0;  
-  padding: 15px;  
-  margin-bottom: 10px;  
-  border-radius: 8px;  
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);  
-  font-size: 1.05em;  
-}  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.whatsapp-btn {  
-  background: #25D366;  
-  color: white;  
-  padding: 15px;  
-  text-align: center;  
-  border-radius: 8px;  
-  text-decoration: none;  
-  font-weight: bold;  
-  display: block;  
-  margin-top: 25px;  
-  font-size: 1.1em;  
-}  
+    h2 {
+      color: #F2B705; /* dourado */
+      font-size: 1.8em;
+      border-bottom: 2px solid #D90416; /* vermelho */
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
 
-footer {  
-  text-align: center;  
-  padding: 20px;  
-  background: #d7ccc8;  
-  margin-top: 30px;  
-  font-size: 1em;  
-}
+    .cardapio-item {
+      background: #111; /* preto mais claro */
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      font-size: 1.05em;
+      border-left: 5px solid #D90416; /* detalhe vermelho */
+    }
 
-  </style>  
-</head>  
-<body>  
-  <header>  
-    Box Restaurante  
-    <p style="font-size: 0.5em; color: #fff8dc;">Comida caseira com sabor de verdade</p>  
-  </header>    <!-- ECONÔMICAS NO TOPO -->    <section>  
-    <h2>Marmitex Econômica</h2>  
-    <div class="cardapio-item">Steak de Frango com Ovo - R$9,99</div>  
-    <div class="cardapio-item">Frango ao Molho - R$9,99</div>  
-    <div class="cardapio-item">Filé de Frango com Ovo - R$9,99</div>  
-    <div class="cardapio-item">Toscana com Ovo - R$9,99</div>  
-    <div class="cardapio-item">Calabresa com Ovo - R$9,99</div>  
-    <div class="cardapio-item">Hambúrguer com Ovo - R$9,99</div>  
-    <div class="cardapio-item">Carne de Porco - R$9,99</div>  
-    <div class="cardapio-item">Frango à Passarinho - R$9,99</div>  
-    <div class="cardapio-item">Panqueca de Carne - R$9,99</div>  
-    <div class="cardapio-item">Joelho de Porco - R$9,99</div>  
-    <div class="cardapio-item">Omelete - R$9,99</div>  
-    <div class="cardapio-item">Bisteca - R$9,99</div>  
-    <div class="cardapio-item">Costela com mandioca - R$18,00</div>  
-    <div class="cardapio-item">Picadinho - R$18,00</div>  
-  </section>    <!-- PRATOS DIÁRIOS -->    <section>  
-    <h2>Cardápio Diário</h2>  
-    <div class="cardapio-item">Frango ao molho - R$22,00</div>  
-    <div class="cardapio-item">Calabresa acebolada - R$22,00</div>  
-    <div class="cardapio-item">Bisteca - R$22,00</div>  
-    <div class="cardapio-item">Filé de Frango - R$27,00</div>  
-    <div class="cardapio-item">Bife - R$28,00</div>  
-    <div class="cardapio-item">Costela com mandioca - R$28,00</div>  
-    <div class="cardapio-item">Parmegiana de frango - R$30,00</div>  
-    <div class="cardapio-item">Parmegiana de carne - R$35,00</div>  
-    <div class="cardapio-item">Peixe - R$35,00</div>  
-    <div class="cardapio-item">Adicional de ovo - R$5,00</div>  
-    <div class="cardapio-item">Adicional de batata frita - R$7,00</div>  
-  </section>    <!-- FEIJOADA -->    <section>  
-    <h2>Feijoada</h2>  
-    <div class="cardapio-item">Quarta-feira: Feijoada<br>econômica: R$18,00<br>Média: R$45,00<br>Grande: R$60,00</div>  
-    <div class="cardapio-item">Sábado: Feijoada<br>econômica: R$18,00<br>Média: R$45,00<br>Grande: R$60,00</div>  <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-top: 25px;
+      font-size: 1.1em;
+    }
 
-  </section>    <!-- RODAPÉ -->    <footer>  
-    <p><strong>Horário:</strong> Segunda a sábado, das 7h às 16h</p>  
-    <p><strong>Endereço:</strong> Estrada da Água Chata, 3255 CEP 08583-370 Guarulhos/sp</p>  
-  </footer>  
-</body>  
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      margin-top: 30px;
+      font-size: 1em;
+      color: #F2B705; /* dourado */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="data:image/png;base64,{{LOGO_BASE64_AQUI}}" alt="Box Restaurante">
+    <p>Comida caseira com sabor de verdade</p>
+  </header>
+
+  <!-- ECONÔMICAS -->
+  <section>
+    <h2>Marmitex Econômica</h2>
+    <div class="cardapio-item">Steak de Frango com Ovo - R$9,99</div>
+    <div class="cardapio-item">Frango ao Molho - R$9,99</div>
+    <div class="cardapio-item">Filé de Frango com Ovo - R$9,99</div>
+    <div class="cardapio-item">Toscana com Ovo - R$9,99</div>
+    <div class="cardapio-item">Calabresa com Ovo - R$9,99</div>
+    <div class="cardapio-item">Hambúrguer com Ovo - R$9,99</div>
+    <div class="cardapio-item">Carne de Porco - R$9,99</div>
+    <div class="cardapio-item">Frango à Passarinho - R$9,99</div>
+    <div class="cardapio-item">Panqueca de Carne - R$9,99</div>
+    <div class="cardapio-item">Joelho de Porco - R$9,99</div>
+    <div class="cardapio-item">Omelete - R$9,99</div>
+    <div class="cardapio-item">Bisteca - R$9,99</div>
+    <div class="cardapio-item">Costela com mandioca - R$18,00</div>
+    <div class="cardapio-item">Picadinho - R$18,00</div>
+  </section>
+
+  <!-- PRATOS DIÁRIOS -->
+  <section>
+    <h2>Cardápio Diário</h2>
+    <div class="cardapio-item">Frango ao molho - R$22,00</div>
+    <div class="cardapio-item">Calabresa acebolada - R$22,00</div>
+    <div class="cardapio-item">Bisteca - R$22,00</div>
+    <div class="cardapio-item">Filé de Frango - R$27,00</div>
+    <div class="cardapio-item">Bife - R$28,00</div>
+    <div class="cardapio-item">Costela com mandioca - R$28,00</div>
+    <div class="cardapio-item">Parmegiana de frango - R$30,00</div>
+    <div class="cardapio-item">Parmegiana de carne - R$35,00</div>
+    <div class="cardapio-item">Peixe - R$35,00</div>
+    <div class="cardapio-item">Adicional de ovo - R$5,00</div>
+    <div class="cardapio-item">Adicional de batata frita - R$7,00</div>
+  </section>
+
+  <!-- FEIJOADA -->
+  <section>
+    <h2>Feijoada</h2>
+    <div class="cardapio-item">Quarta-feira: Feijoada<br>econômica: R$18,00<br>Média: R$45,00<br>Grande: R$60,00</div>
+    <div class="cardapio-item">Sábado: Feijoada<br>econômica: R$18,00<br>Média: R$45,00<br>Grande: R$60,00</div>
+
+    <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p><strong>Horário:</strong> Segunda a sábado, das 7h às 16h</p>
+    <p><strong>Endereço:</strong> Estrada da Água Chata, 3255 CEP 08583-370 Guarulhos/sp</p>
+  </footer>
+</body>
 </html>
