@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Box Restaurante</title>
-  <!-- Fonte mais legível -->
+  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -16,33 +16,26 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f7f1e1;
-      color: #3e2723;
+      background: #000; /* fundo preto */
+      color: #fff; /* texto branco */
     }
 
     header {
-      background-color: #5d4037;
-      color: goldenrod;
-      padding: 30px;
+      background-color: #000;
       text-align: center;
-      font-size: 2.5em;
-      font-weight: 600;
-      position: relative;
-      background: linear-gradient(45deg, gold, darkgoldenrod);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
+      padding: 20px;
     }
 
-    header::after {
-      content: "🍴";
-      font-size: 2em;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      color: gold;
-      filter: drop-shadow(0 0 1px darkgoldenrod);
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
+      color: #F2B705; /* dourado do logo */
+      font-weight: 600;
     }
 
     section {
@@ -56,17 +49,21 @@
     }
 
     h2 {
-      color: #795548;
+      color: #F2B705; /* dourado */
       font-size: 1.8em;
+      border-bottom: 2px solid #D90416; /* vermelho */
+      padding-bottom: 5px;
+      margin-bottom: 15px;
     }
 
     .cardapio-item {
-      background: #fffaf0;
+      background: #111; /* preto mais claro */
       padding: 15px;
       margin-bottom: 10px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
       font-size: 1.05em;
+      border-left: 5px solid #D90416; /* detalhe vermelho */
     }
 
     .whatsapp-btn {
@@ -85,19 +82,20 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #d7ccc8;
+      background: #111;
       margin-top: 30px;
       font-size: 1em;
+      color: #F2B705; /* dourado */
     }
   </style>
 </head>
 <body>
   <header>
-    Box Restaurante
-    <p style="font-size: 0.5em; color: #fff8dc;">Comida caseira com sabor de verdade</p>
+    <img src="logo.png" alt="Box Restaurante">
+    <p>Comida caseira com sabor de verdade</p>
   </header>
 
-  <!-- ECONÔMICAS NO TOPO -->
+  <!-- ECONÔMICAS -->
   <section>
     <h2>Marmitex Econômica</h2>
     <div class="cardapio-item">Steak de Frango com Ovo - R$9,99</div>
