@@ -107,35 +107,37 @@ input, select {
 
 <input type="text" id="troco" placeholder="Troco para (se dinheiro)">
 
-<h3>🍛 Cardápio</h3>
+<!-- CARDÁPIO -->
 
-<div class="produto">
-  Filé de Frango - R$31,99
-  <button onclick="addItem('Filé de Frango',31.99)">Adicionar</button>
-</div>
+<h3>🍳 Pratos com Ovo</h3>
+<div class="produto">Steak com ovo - R$12,99 <button onclick="addItem('Steak com ovo',12.99)">Adicionar</button></div>
+<div class="produto">Hambúrguer com ovo - R$12,99 <button onclick="addItem('Hambúrguer com ovo',12.99)">Adicionar</button></div>
+<div class="produto">Calabresa com ovo - R$14,99 <button onclick="addItem('Calabresa com ovo',14.99)">Adicionar</button></div>
+<div class="produto">Toscana com ovo - R$14,99 <button onclick="addItem('Toscana com ovo',14.99)">Adicionar</button></div>
+<div class="produto">Filé de frango com ovo - R$15,99 <button onclick="addItem('Filé de frango com ovo',15.99)">Adicionar</button></div>
 
-<div class="produto">
-  Bife - R$33,99
-  <button onclick="addItem('Bife',33.99)">Adicionar</button>
-</div>
+<h3>🍲 Pratos ao Molho</h3>
+<div class="produto">Joelho ao molho - R$14,99 <button onclick="addItem('Joelho ao molho',14.99)">Adicionar</button></div>
+<div class="produto">Frango ao molho - R$14,99 <button onclick="addItem('Frango ao molho',14.99)">Adicionar</button></div>
+<div class="produto">Costela ao molho - R$19,99 <button onclick="addItem('Costela ao molho',19.99)">Adicionar</button></div>
 
-<div class="produto">
-  Calabresa - R$26,99
-  <button onclick="addItem('Calabresa',26.99)">Adicionar</button>
-</div>
+<h3>🍛 Comercial</h3>
+<div class="produto">Steak - R$26,99 <button onclick="addItem('Steak',26.99)">Adicionar</button></div>
+<div class="produto">Hambúrguer - R$26,99 <button onclick="addItem('Hambúrguer',26.99)">Adicionar</button></div>
+<div class="produto">Calabresa - R$26,99 <button onclick="addItem('Calabresa',26.99)">Adicionar</button></div>
+<div class="produto">Toscana - R$26,99 <button onclick="addItem('Toscana',26.99)">Adicionar</button></div>
+<div class="produto">Bife - R$33,99 <button onclick="addItem('Bife',33.99)">Adicionar</button></div>
+<div class="produto">Filé de frango - R$31,99 <button onclick="addItem('Filé de frango',31.99)">Adicionar</button></div>
 
-<div class="produto">
-  Feijoada - R$25,99
-  <button onclick="addItem('Feijoada',25.99)">Adicionar</button>
-</div>
+<h3>🐟 Especiais</h3>
+<div class="produto">Peixe (Sexta-feira) - R$15,99 <button onclick="addItem('Peixe',15.99)">Adicionar</button></div>
+<div class="produto">Feijoada - R$25,99 <button onclick="addItem('Feijoada',25.99)">Adicionar</button></div>
 
 </div>
 
 <div class="carrinho">
   <h3>🛒 Seu Pedido</h3>
   <div id="lista"></div>
-
-  <p>🚚 Taxa de entrega: R$ <span id="taxa"></span></p>
 
   <div class="total">
     Total: R$ <span id="total">0.00</span>
@@ -149,7 +151,6 @@ input, select {
 <script>
 let carrinho = [];
 let total = 0;
-let taxaEntrega = 5;
 
 function addItem(nome, preco) {
   carrinho.push({nome, preco});
@@ -175,8 +176,7 @@ function atualizarCarrinho() {
     `;
   });
 
-  let totalFinal = total + taxaEntrega;
-  document.getElementById("total").innerText = totalFinal.toFixed(2);
+  document.getElementById("total").innerText = total.toFixed(2);
 }
 
 function finalizarPedido() {
@@ -205,10 +205,7 @@ function finalizarPedido() {
     mensagem += `- ${item.nome} R$ ${item.preco.toFixed(2)}%0A`;
   });
 
-  let totalFinal = total + taxaEntrega;
-
-  mensagem += `%0A🚚 Taxa: R$ ${taxaEntrega.toFixed(2)}%0A`;
-  mensagem += `💰 Total: R$ ${totalFinal.toFixed(2)}`;
+  mensagem += `%0A💰 Total: R$ ${total.toFixed(2)}`;
 
   window.open(`https://wa.me/5511954404784?text=${mensagem}`);
 }
@@ -216,66 +213,3 @@ function finalizarPedido() {
 
 </body>
 </html>
-<!-- PRATOS COM OVO -->
-<div class="produto">
-  Steak com ovo - R$12,99
-  <button onclick="addItem('Steak com ovo',12.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Hambúrguer com ovo - R$12,99
-  <button onclick="addItem('Hambúrguer com ovo',12.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Calabresa com ovo - R$14,99
-  <button onclick="addItem('Calabresa com ovo',14.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Toscana com ovo - R$14,99
-  <button onclick="addItem('Toscana com ovo',14.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Filé de frango com ovo - R$15,99
-  <button onclick="addItem('Filé de frango com ovo',15.99)">Adicionar</button>
-</div>
-
-<!-- PRATOS AO MOLHO -->
-<div class="produto">
-  Joelho ao molho - R$14,99
-  <button onclick="addItem('Joelho ao molho',14.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Frango ao molho - R$14,99
-  <button onclick="addItem('Frango ao molho',14.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Costela ao molho - R$19,99
-  <button onclick="addItem('Costela ao molho',19.99)">Adicionar</button>
-</div>
-
-<!-- COMERCIAL -->
-<div class="produto">
-  Steak - R$26,99
-  <button onclick="addItem('Steak',26.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Hambúrguer - R$26,99
-  <button onclick="addItem('Hambúrguer',26.99)">Adicionar</button>
-</div>
-
-<div class="produto">
-  Toscana - R$26,99
-  <button onclick="addItem('Toscana',26.99)">Adicionar</button>
-</div>
-
-<!-- ESPECIAL -->
-<div class="produto">
-  Peixe (Sexta-feira) - R$15,99
-  <button onclick="addItem('Peixe',15.99)">Adicionar</button>
-</div>
