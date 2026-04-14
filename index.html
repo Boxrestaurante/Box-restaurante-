@@ -1,159 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Box Restaurante</title>
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      transition: all 0.3s ease;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Restaurante</title>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #000; /* fundo preto */
-      color: #fff; /* texto branco */
-    }
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #111;
+  color: #fff;
+}
 
-    header {
-      background-color: #000;
-      text-align: center;
-      padding: 20px;
-    }
+header {
+  background: linear-gradient(90deg, #a00000, #d90416);
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    header img {
-      max-width: 180px;
-      height: auto;
-    }
+.container {
+  padding: 15px;
+}
 
-    header p {
-      margin: 5px 0 0;
-      font-size: 1em;
-      color: #F2B705; /* dourado do logo */
-      font-weight: 600;
-    }
+h3 {
+  color: #F2B705;
+}
 
-    section {
-      padding: 25px;
-      animation: fadeIn 1s ease-in-out;
-    }
+.produto {
+  background: #222;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+button {
+  background: #25D366;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  font-weight: bold;
+}
 
-    h2 {
-      color: #F2B705; /* dourado */
-      font-size: 1.8em;
-      border-bottom: 2px solid #D90416; /* vermelho */
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
+.remover {
+  background: #ff4444;
+  margin-top: 5px;
+}
 
-    .cardapio-item {
-      background: #111; /* preto mais claro */
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      font-size: 1.05em;
-      border-left: 5px solid #D90416; /* detalhe vermelho */
-    }
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}
 
-    .whatsapp-btn {
-      background: #25D366;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      display: block;
-      margin-top: 25px;
-      font-size: 1.1em;
-    }
+.carrinho {
+  background: #000;
+  padding: 15px;
+  border-top: 2px solid #25D366;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      margin-top: 30px;
-      font-size: 1em;
-      color: #F2B705; /* dourado */
-    }
-  </style>
+.total {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <img src="data:image/png;base64,{{LOGO_BASE64_AQUI}}" alt="Box Restaurante">
-    <p>Comida caseira com sabor de verdade</p>
-  </header>
 
-  <!-- ECONÔMICAS -->
-  <section>
-    <h2>Marmitex Econômica</h2>
-    <div class="cardapio-item">Steak de Frango com Ovo - R$9,99</div>
-    <div class="cardapio-item">Frango ao Molho - R$9,99</div>
-    <div class="cardapio-item">Filé de Frango com Ovo - R$9,99</div>
-    <div class="cardapio-item">Toscana com Ovo - R$9,99</div>
-    <div class="cardapio-item">Calabresa com Ovo - R$9,99</div>
-    <div class="cardapio-item">Hambúrguer com Ovo - R$9,99</div>
-    <div class="cardapio-item">Carne de Porco - R$9,99</div>
-    <div class="cardapio-item">Frango à Passarinho - R$9,99</div>
-    <div class="cardapio-item">Panqueca de Carne e frango - R$9,99</div>
-    <div class="cardapio-item">Joelho de Porco - R$9,99</div>
-    <div class="cardapio-item">Omelete - R$9,99</div>
-    <div class="cardapio-item">Bisteca - R$18,00</div>
-    <div class="cardapio-item">Costela  - R$20,00</div>
-    <div class="cardapio-item">Picadinho - R$18,00</div>
-  </section>
+<header>🍽️ BOX RESTAURANTE</header>
 
-  <!-- PRATOS DIÁRIOS -->
-  <section>
-    <h2>Cardápio Diário</h2>
-    <div class="cardapio-item">Frango ao molho - R$22,00</div>
-    <div class="cardapio-item">Calabresa acebolada - R$22,00</div>
-    <div class="cardapio-item">Bisteca - R$22,00</div>
-    <div class="cardapio-item">Filé de Frango - R$27,00</div>
-    <div class="cardapio-item">Bife - R$28,00</div>
-    <div class="cardapio-item">Costela - R$28,00</div>
-    <div class="cardapio-item">Adicional de ovo - R$5,00</div>
-    <div class="cardapio-item">Adicional de batata frita - R$7,00</div>
-  </section>
+<div class="container">
 
-  <!-- SEXTA DO PEIXE -->
-<section>
-  <h2>Sexta do Peixe 🐟</h2>
-  <div class="cardapio-item">Econômico - R$9,99</div>
-  <div class="cardapio-item">Peixe Comercial - R$35,00</div>
-</section>
+<h3>📋 Seus Dados</h3>
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="endereco" placeholder="Seu endereço">
 
-<!-- FEIJOADA -->
-<section>
-  <h2>Feijoada (Quarta e Sábado) 🍲</h2>
-  <div class="cardapio-item">Feijoada Pequena - R$18,00</div>
-  <div class="cardapio-item">Feijoada Pequena com Bisteca - R$23,00</div>
-  <div class="cardapio-item">Feijoada Média - R$35,00</div>
-  <div class="cardapio-item">Feijoada Média com Bisteca - R$40,00</div>
-  <div class="cardapio-item">Feijoada Grande - R$50,00</div>
-  <div class="cardapio-item">Feijoada Grande com Bisteca - R$60,00</div>
+<select id="pagamento">
+  <option value="">Forma de pagamento</option>
+  <option>Pix</option>
+  <option>Dinheiro</option>
+  <option>Cartão</option>
+</select>
 
-  <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20de%20Feijoada%20ou%20Peixe!" target="_blank">Pedir pelo WhatsApp</a>
-</section>
+<input type="text" id="troco" placeholder="Troco para (se dinheiro)">
 
-    <a class="whatsapp-btn" href="https://wa.me/5511954404784?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank">Pedir pelo WhatsApp</a>
-  </section>
+<h3>🍛 Cardápio</h3>
 
-  <!-- RODAPÉ -->
-  <footer>
-    <p><strong>Horário:</strong> Segunda a sábado, das 7h às 16h</p>
-    <p><strong>Endereço:</strong> Estrada da Água Chata, 3255 CEP 08583-370 Guarulhos/sp</p>
-  </footer>
+<div class="produto">
+  Filé de Frango - R$31,99
+  <button onclick="addItem('Filé de Frango',31.99)">Adicionar</button>
+</div>
+
+<div class="produto">
+  Bife - R$33,99
+  <button onclick="addItem('Bife',33.99)">Adicionar</button>
+</div>
+
+<div class="produto">
+  Calabresa - R$26,99
+  <button onclick="addItem('Calabresa',26.99)">Adicionar</button>
+</div>
+
+<div class="produto">
+  Feijoada - R$25,99
+  <button onclick="addItem('Feijoada',25.99)">Adicionar</button>
+</div>
+
+</div>
+
+<div class="carrinho">
+  <h3>🛒 Seu Pedido</h3>
+  <div id="lista"></div>
+
+  <p>🚚 Taxa de entrega: R$ <span id="taxa">5.00</span></p>
+
+  <div class="total">
+    Total: R$ <span id="total">0.00</span>
+  </div>
+
+  <button onclick="finalizarPedido()">Finalizar no WhatsApp</button>
+</div>
+
+<a href="https://wa.me/5511954404784" class="whatsapp-float">💬</a>
+
+<script>
+let carrinho = [];
+let total = 0;
+let taxaEntrega = 5;
+
+function addItem(nome, preco) {
+  carrinho.push({nome, preco});
+  total += preco;
+  atualizarCarrinho();
+}
+
+function removerItem(index) {
+  total -= carrinho[index].preco;
+  carrinho.splice(index,1);
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  let lista = document.getElementById("lista");
+  lista.innerHTML = "";
+
+  carrinho.forEach((item, index) => {
+    lista.innerHTML += `
+      • ${item.nome} - R$ ${item.preco.toFixed(2)}
+      <button class="remover" onclick="removerItem(${index})">Remover</button>
+      <br><br>
+    `;
+  });
+
+  let totalFinal = total + taxaEntrega;
+  document.getElementById("total").innerText = totalFinal.toFixed(2);
+}
+
+function finalizarPedido() {
+  let nome = document.getElementById("nome").value;
+  let endereco = document.getElementById("endereco").value;
+  let pagamento = document.getElementById("pagamento").value;
+  let troco = document.getElementById("troco").value;
+
+  if(nome === "" || endereco === "" || pagamento === "") {
+    alert("Preencha todos os dados!");
+    return;
+  }
+
+  let mensagem = `🍽️ *Pedido - Box Restaurante*%0A%0A`;
+  mensagem += `👤 Nome: ${nome}%0A`;
+  mensagem += `📍 Endereço: ${endereco}%0A`;
+  mensagem += `💳 Pagamento: ${pagamento}%0A`;
+
+  if(pagamento === "Dinheiro" && troco !== "") {
+    mensagem += `💰 Troco para: R$ ${troco}%0A`;
+  }
+
+  mensagem += `%0A🛒 Pedido:%0A`;
+
+  carrinho.forEach(item => {
+    mensagem += `- ${item.nome} R$ ${item.preco.toFixed(2)}%0A`;
+  });
+
+  let totalFinal = total + taxaEntrega;
+
+  mensagem += `%0A🚚 Taxa: R$ ${taxaEntrega.toFixed(2)}%0A`;
+  mensagem += `💰 Total: R$ ${totalFinal.toFixed(2)}`;
+
+  window.open(`https://wa.me/5511954404784?text=${mensagem}`);
+}
+</script>
+
 </body>
 </html>
